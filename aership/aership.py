@@ -2,6 +2,21 @@
    Main(), add classes and/or functions later
 """
 
+def get_standard_cubic_foot_air_weight():
+    """
+    Returns weight of a cubic foot of air in standard atmosphere in lbs.
+
+    The weight of a cubic foot of air in the standard atmosphere, i.e.
+    temperature 60°F , and 29.92 in barometric pressure at sea level
+    is 0.07635 lbs
+    """
+    return 0.07635
+
+# Testing get_standard_cubic_foot_air_weight():
+standard_air = get_standard_cubic_foot_air_weight()
+print(standard_air)
+
+
 def calculate_horsepower_considering_speed_and_size( v, p, V, K ):
     """
     Calculates the relation between horsepower speed and size.
@@ -33,3 +48,9 @@ def calculate_horsepower_considering_speed_and_size( v, p, V, K ):
 # Testing calculate_horsepower_considering_speed_and_size
 my_horsepower = calculate_horsepower_considering_speed_and_size(200, 2, 5, 50)
 print(my_horsepower)
+
+def calculate_horsepower_using_standard_displacement():
+    """
+
+    """
+    
