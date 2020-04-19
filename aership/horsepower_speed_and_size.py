@@ -1,7 +1,3 @@
-"""
-   Main(), add classes and/or functions later
-"""
-
 def calculate_horsepower_considering_speed_and_size( v, p, V, K ):
     """
     Calculates the relation between horsepower speed and size.
@@ -29,7 +25,3 @@ def calculate_horsepower_considering_speed_and_size( v, p, V, K ):
     """
     horsepower = ( V ** ( 2/3 ) * p * ( v ** 3 ) / ( 550 * K) )
     return horsepower
-
-# Testing calculate_horsepower_considering_speed_and_size
-my_horsepower = calculate_horsepower_considering_speed_and_size(200, 2, 5, 50)
-print(my_horsepower)
