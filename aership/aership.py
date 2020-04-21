@@ -49,8 +49,27 @@ def calculate_horsepower_considering_speed_and_size( v, p, V, K ):
 my_horsepower = calculate_horsepower_considering_speed_and_size(200, 2, 5, 50)
 print(my_horsepower)
 
-def calculate_horsepower_using_standard_displacement():
+def calculate_horsepower_using_standard_displacement(displacement, density_of_air, speed, design_coefficient):
     """
+    Parameters
+    -------------
+    D (displacement) : decimal
+        The weight of a cubic foot of air in the standard atmosphere, i.e.
+        temperature 60°F , and 29.92 in barometric pressure at sea level
+        is 0.07635 lbs
 
+    v (speed) : decimal
+        Speed in feet feet/seconds
+
+    p (densitiy_of_air) : decimal
+        Density of the air in slugs/feet ** 3 (1 slug = 32.lbs)
+
+    K (design_coefficient): decimal
+        a non-dimensional coefficient depending upon 
+        the propeller efficiency and the design of the hull and its appendages.
+        `K` is thus a measure of the overall propulsive energy of an airship, 
+        including both the resistances of the ship and the propeller efficiency.
     """
-    
+    horsepower =  (( displacement ** 2/3 ) * density_of_air * ( speed ** 3 ) ) / ( 99 * design_coefficient )
+    return horsepower
+
