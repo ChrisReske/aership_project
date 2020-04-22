@@ -13,8 +13,8 @@ def get_standard_cubic_foot_air_weight():
     return 0.07635
 
 # Testing get_standard_cubic_foot_air_weight():
-standard_air = get_standard_cubic_foot_air_weight()
-print(standard_air)
+standard_air_weight = get_standard_cubic_foot_air_weight()
+print(standard_air_weight)
 
 
 def calculate_horsepower_considering_speed_and_size( v, p, V, K ):
@@ -72,4 +72,23 @@ def calculate_horsepower_using_standard_displacement(displacement, density_of_ai
     """
     horsepower =  (( displacement ** 2/3 ) * density_of_air * ( speed ** 3 ) ) / ( 99 * design_coefficient )
     return horsepower
+
+#Trying to calculate a problem set from the book
+
+"""
+   Problem 1
+   Find the volume and horsepower of a rigid airship to carry a military load of 15,000 lbs.
+   at 60 knots (101.3 ft. / sec.). for 60 hours, 85% of the total volume being filled with helium
+   lifting .064 lb./ft.**3 (94 % pure) in the standard atmosphere.
+
+   Since the hull is specified in the condition of the problem to be 85% full of gas, 
+   the weight of the gas is 85% D multiplied by the difference between the weight of air and
+   the lift of gas per unit volume, and divided by the weight of air per unit volume. The total
+   weight of air and gas is therefore ...
+"""
+def calculate_total_weight_of_air_and_gas( 
+    percentage_filled_total_volume, 
+    lift_per_unit_volume, standard_air_weight):
+    total_air_weight =  ( (100 - percentage_filled_total_volume) / 100.0 ) + ( ( percentage_filled_total_volume * ( standard_air_weight - lift_per_unit_volume ) ) / standard_air_weight )
+    return total_air_weight
 
