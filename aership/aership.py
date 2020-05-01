@@ -47,7 +47,6 @@ def calculate_horsepower_considering_speed_and_size( v, p, V, K ):
 
 # Testing calculate_horsepower_considering_speed_and_size
 my_horsepower = calculate_horsepower_considering_speed_and_size(200, 2, 5, 50)
-print(my_horsepower)
 
 def calculate_horsepower_using_standard_displacement(displacement, density_of_air, speed, design_coefficient):
     """
