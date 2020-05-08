@@ -12,10 +12,7 @@ def get_standard_cubic_foot_air_weight():
     """
     return 0.07635
 
-# Testing get_standard_cubic_foot_air_weight():
 standard_air_weight = get_standard_cubic_foot_air_weight()
-print(standard_air_weight)
-
 
 def calculate_horsepower_considering_speed_and_size( v, p, V, K ):
     """
@@ -96,11 +93,12 @@ def calculate_total_weight_of_air_and_gas(
    
     
     ttaw_equation_01 = ( (100 - percentage_filled_total_volume) / 100.0 ) 
-    ttaw_tmp_result_02 = percentage_filled_total_volume * standard_air_weight
-    #Debug
+    ttaw_tmp_result_02 =( ( percentage_filled_total_volume / 100.0 ) * standard_air_weight )
+    ##Debug
     print( standard_air_weight )
+    print( ttaw_equation_01 )
     print( ttaw_tmp_result_02 )
-    ttaw_tmp_result_03 = ( percentage_filled_total_volume * lift_per_unit_volume ) * ( -1.0 )
+    ttaw_tmp_result_03 = ( ( percentage_filled_total_volume / 100.0 ) * ( lift_per_unit_volume ) * ( -1.0 ) )
     #Debug
     print( ttaw_tmp_result_03 )
     # Using results from first binomial block for second block (division)
@@ -111,8 +109,8 @@ def calculate_total_weight_of_air_and_gas(
     #Debug
     print(ttaw_tmp_result_05)
     total_air_weight = ttaw_equation_01 + ttaw_tmp_result_04 + ttaw_tmp_result_05
-    
-    return total_air_weight
+    print( total_air_weight )
+    #return total_air_weight
 
 my_ttaw = calculate_total_weight_of_air_and_gas( 85.0, 0.064, standard_air_weight )
-print( my_ttaw )
+#print( my_ttaw )
