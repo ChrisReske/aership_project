@@ -90,27 +90,15 @@ def calculate_total_weight_of_air_and_gas(
     #total_air_weight =  ( (100 - percentage_filled_total_volume) / 100.0 ) + \
     #                    ( ( percentage_filled_total_volume * ( standard_air_weight - lift_per_unit_volume ) )\
     #                   / standard_air_weight )
-   
-    
+
     ttaw_equation_01 = ( (100 - percentage_filled_total_volume) / 100.0 ) 
     ttaw_tmp_result_02 =( ( percentage_filled_total_volume / 100.0 ) * standard_air_weight )
-    ##Debug
-    print( standard_air_weight )
-    print( ttaw_equation_01 )
-    print( ttaw_tmp_result_02 )
     ttaw_tmp_result_03 = ( ( percentage_filled_total_volume / 100.0 ) * ( lift_per_unit_volume ) * ( -1.0 ) )
-    #Debug
-    print( ttaw_tmp_result_03 )
     # Using results from first binomial block for second block (division)
     ttaw_tmp_result_04 = ttaw_tmp_result_02 / standard_air_weight
-    #Debug
-    print( ttaw_tmp_result_04 )
     ttaw_tmp_result_05 = ttaw_tmp_result_03 / standard_air_weight
-    #Debug
-    print(ttaw_tmp_result_05)
     total_air_weight = ttaw_equation_01 + ttaw_tmp_result_04 + ttaw_tmp_result_05
-    print( total_air_weight )
-    #return total_air_weight
+    return round(total_air_weight, 5)
 
 my_ttaw = calculate_total_weight_of_air_and_gas( 85.0, 0.064, standard_air_weight )
-#print( my_ttaw )
+print( my_ttaw )
