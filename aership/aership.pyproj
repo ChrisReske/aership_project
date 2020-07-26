@@ -29,6 +29,9 @@
     <Compile Include="standard_cubic_weight.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="total_weight.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
