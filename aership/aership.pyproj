@@ -23,6 +23,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="aership.py" />
+    <Compile Include="auxiliary_weight.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="horsepower.py">
       <SubType>Code</SubType>
     </Compile>
