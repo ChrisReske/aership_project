@@ -25,4 +25,4 @@ def compute_auxilliary_weight(total_air_weight,
                             Number of decimals the result should be rounded upon computation.
                             If no integer is provided, default is used.
     """
-    return round(1 - total_air_weight - fixed_weights_power - fixed_weights_ballast_and_crew, rounding)
+    return round(1 - total_air_weight - fixed_weights_power - fixed_weights_bc, rounding)
