@@ -2,6 +2,7 @@ import standard_cubic_weight
 import horsepower
 import total_weight
 import auxiliary_weight
+import weight_per_horsepower
 
 """
    Main()
@@ -19,3 +20,7 @@ print("Total weight of air and gas is: ", ttaw )
 # Compute auxiliary weight( power plant, fuel, military or commercial load)
 auxilliary_weight = auxiliary_weight.compute_auxilliary_weight(ttaw)
 print( "Auxiliary weight is: ", auxilliary_weight )
+
+# Compute weight per horsepower
+weight_hp = weight_per_horsepower.calculate_weight_per_horsepower(8, 0.6)
+print("Weight for power plant and fuel system is: "  + str( weight_hp ) )

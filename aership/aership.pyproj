@@ -35,6 +35,9 @@
     <Compile Include="total_weight.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="weight_per_horsepower.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
