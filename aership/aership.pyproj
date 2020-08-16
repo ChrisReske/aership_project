@@ -26,6 +26,9 @@
     <Compile Include="auxiliary_weight.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="calculate_volume_and_hp.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="horsepower.py">
       <SubType>Code</SubType>
     </Compile>
