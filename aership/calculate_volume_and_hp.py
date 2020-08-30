@@ -1,6 +1,7 @@
 import total_weight
+import standard_cubic_weight
 
-def calculate_vol_and_hp( load, speed=50.0, operating_hours=60.0, fill_volume=100, lift_capacity=0.064 ):
+def calculate_vol_and_hp( load, speed_in_knots=60.0, operating_hours=60.0, fill_volume=100, lift_capacity=0.064):
     """
     Calculates volume and horsepower of a rigid airship taking into account a user-defined
     military or commercial load, a user-defined speed in knots, user-defined hours for operating
@@ -13,9 +14,9 @@ def calculate_vol_and_hp( load, speed=50.0, operating_hours=60.0, fill_volume=10
     load:               decimal
                         User-defined military or commercial load in lbs, the airship is expected to carry.
 
-    speed:              decimal
+    speed_in_knots:     decimal
                         User-defined speed in knots the airships is suppose to operate.
-                        If not indicated otherwise, the default speed is 50 knots.
+                        If not indicated otherwise, the default speed is 60 knots.
 
     operating_hours:    decimal
                         User-defined hours for which the speed defined in parameter 'speed' should be maintained.
@@ -46,7 +47,13 @@ def calculate_vol_and_hp( load, speed=50.0, operating_hours=60.0, fill_volume=10
 
     """
 
-    # First compute ttotla weight of air and gas
-    tw_air_and_gas = total_weight.calculate_total_weight_of_air_and_gas(fill_volume, )
+    # First compute total weight of air and gas
 
+    air_weight = standard_cubic_weight.get_standard_weight()
 
+    if air_weight == 0:
+        print("Standard air weight is null, please check your  code")
+        return None
+
+    # I calculate air and gas
+    air_and_gas = total_weight.calculate_total_weight_of_air_and_gas(85.0, 0.064, air_weight)

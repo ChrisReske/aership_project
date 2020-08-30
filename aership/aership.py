@@ -3,6 +3,7 @@ import horsepower
 import total_weight
 import auxiliary_weight
 import weight_per_horsepower
+import calculate_volume_and_hp
 
 """
    Main()
@@ -24,3 +25,5 @@ print( "Auxiliary weight is: ", auxilliary_weight )
 # Compute weight per horsepower
 weight_hp = weight_per_horsepower.calculate_weight_per_horsepower(8, 0.6)
 print("Weight for power plant and fuel system is: "  + str( weight_hp ) )
+
+test = calculate_volume_and_hp.calculate_vol_and_hp(15000.0) 
