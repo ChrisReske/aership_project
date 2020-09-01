@@ -1,5 +1,6 @@
 import total_weight
 import standard_cubic_weight
+import auxiliary_weight
 
 def calculate_vol_and_hp( load, speed_in_knots=60.0, operating_hours=60.0, fill_volume=100, lift_capacity=0.064):
     """
@@ -52,8 +53,26 @@ def calculate_vol_and_hp( load, speed_in_knots=60.0, operating_hours=60.0, fill_
     air_weight = standard_cubic_weight.get_standard_weight()
 
     if air_weight == 0:
-        print("Standard air weight is null, please check your  code")
+        print("Standard air weight is null, please check your code")
         return None
 
     # I calculate air and gas
-    air_and_gas = total_weight.calculate_total_weight_of_air_and_gas(85.0, 0.064, air_weight)
+    tw_air_and_gas = total_weight.calculate_total_weight_of_air_and_gas(85.0, 0.064, air_weight)
+    
+    if tw_air_and_gas == 0:
+        return None
+        print("Total weight of air and gas is 0, please check your code")
+    
+    # Calculate total air weight and auxiliary weight
+    aux_weight = auxiliary_weight.compute_auxilliary_weight(tw_air_and_gas)
+    tmp = aux_weight
+   
+    if aux_weight == 0:
+        return None
+        print("Auxiliary weight is 0, please check your code")
+
+    # Calculate combined weight for fuel and fuel 
+
+
+    # Combine previous results with military load
+    
