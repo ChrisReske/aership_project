@@ -1,8 +1,16 @@
 import total_weight
 import standard_cubic_weight
 import auxiliary_weight
+import weight_per_horsepower
 
-def calculate_vol_and_hp( load, speed_in_knots=60.0, operating_hours=60.0, fill_volume=100, lift_capacity=0.064):
+def calculate_vol_and_hp( 
+    load, 
+    speed_in_knots=60.0, 
+    operating_hours=60.0, 
+    fill_volume=100, 
+    lift_capacity=0.064, 
+    power_plant = 1.0, 
+    weight_fuel_system=1.0):
     """
     Calculates volume and horsepower of a rigid airship taking into account a user-defined
     military or commercial load, a user-defined speed in knots, user-defined hours for operating
@@ -71,8 +79,13 @@ def calculate_vol_and_hp( load, speed_in_knots=60.0, operating_hours=60.0, fill_
         return None
         print("Auxiliary weight is 0, please check your code")
 
-    # Calculate combined weight for fuel and fuel 
+    # Calculate combined weight for fuel and fuel system
+    fuel_and_fuel_system = weight_per_horsepower.calculate_weight_per_horsepower(
+        power_plant, weight_fuel_system) 
 
+    if fuel_and_fuel_system == 0:
+        return None
+        print("Weight for fuel and fuel system is 0, please check your code.")
 
     # Combine previous results with military load
     
