@@ -4,7 +4,6 @@ import total_weight
 import auxiliary_weight
 import weight_per_horsepower
 import calculate_volume_and_hp
-import sympy as sym
 
 """
    Main()
